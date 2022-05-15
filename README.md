@@ -7,7 +7,7 @@ Morten Niklas Gjerding et al 2021 2D Mater. 8 044002  (https://iopscience.iop.or
 
 
 **Database is current as of 4/08/2022 (this uses saved HTML pages to get urls)**  
->***Heads up - it will take some time to completely scape the database***  
+>***Heads up - it will take some time to completely scape the database. Good news it will automatically restart where you've left off it script is interupted***  
 
 ## Features:
 * Automatically downloads raw data JSONs and saves to disk.  
