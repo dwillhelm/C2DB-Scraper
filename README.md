@@ -29,7 +29,7 @@ Install the project src code
 `conda activate c2db-scraper`  
 `pip install -e .`  
 
-## Useage
+## Usage
 run main.py `python main.py`  
 or   
 use packaged python code 
