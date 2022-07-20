@@ -1,11 +1,15 @@
-# my_c2db_scaper
-A small repo to automatically scrape the C2DB database - an extensize material database of 2D materials and properties calculated via DFT (https://cmrdb.fysik.dtu.dk/c2db/)  
+# C2DB-Scraper
+A simple repo to automatically scrape the C2DB database - an extensize material database of 2D materials and properties calculated via DFT (https://cmrdb.fysik.dtu.dk/c2db/) *Its basically a simple wrapper of some bash wget scripts.*   
 
-Please cite the origional source: https://iopscience.iop.org/article/10.1088/2053-1583/ac1059
+**Please cite the origional source:**  
+Sten Haastrup et al 2018 2D Mater. 5 042002  (https://iopscience.iop.org/article/10.1088/2053-1583/aacfc1)  
+Morten Niklas Gjerding et al 2021 2D Mater. 8 044002  (https://iopscience.iop.org/article/10.1088/2053-1583/ac1059)  
 
-Database is current as of 4/08/2022
 
-Features:
+**Database is current as of 4/08/2022 (this uses saved HTML pages to get urls)**  
+>***Heads up - it will take some time to completely scape the database. Good news it will automatically restart where you've left off it script is interupted***  
+
+## Features:
 * Automatically downloads raw data JSONs and saves to disk.  
 * Parses raw data JSONs to build a structure file (POSCAR).  
 * Parse raw data JSONs for several important materials properties and saves it as a small JSON file.  
@@ -25,7 +29,7 @@ Install the project src code
 `conda activate c2db-scraper`  
 `pip install -e .`  
 
-## Useage
+## Usage
 run main.py `python main.py`  
 or   
 use packaged python code 
@@ -46,8 +50,49 @@ scraper.build()
 All C2DB structures are converted to POSCAR files
 
 ## Material Properties
-The following materials properties are automatically parsed from the raw data file.  
-['formula', 'cod_id', 'spacegroup', 'spacegroup_num', 'pointgroup', 'has_inversion_symmetry', 'hform', 'ehull', 'thermodynamic_stability_level', 'gap', 'gap_dir', 'gap_nosoc', 'gap_dir_nosoc', 'cbm', 'cbm_dir', 'vbm', 'vbm_dir', 'efermi', 'dipz', 'evac', 'evacdiff', 'workfunction', 'gap_dir_hse', 'gap_dir_hse_nosoc', 'gap_hse', 'gap_hse_nosoc', 'cbm_hse', 'cbm_hse_nosoc', 'vbm_hse', 'vbm_hse_nosoc', 'efermi_hse_nosoc', 'efermi_hse_soc', 'emass_cb_dir1', 'emass_cb_dir2', 'emass_cb_dir3', 'emass_vb_dir1', 'emass_vb_dir2', 'emass_vb_dir3', 'is_magnetic', 'bader_charges', 'magmoms']
+The following materials properties are automatically parsed from the raw data file: 
+| Queried Properties | 
+| -------- |
+|'formula' |
+|'cod_id'  | 
+|'spacegroup'| 
+|'spacegroup_num'|
+|'pointgroup'|
+|'has_inversion_symmetry'|
+|'hform'
+|'ehull'|
+|'thermodynamic_stability_level'|
+|'gap'|
+|'gap_dir'|
+|'gap_nosoc'|
+|'gap_dir_nosoc'|
+|'cbm', 'cbm_dir'|
+|'vbm'|
+|'vbm_dir'|
+|'efermi'|
+|'dipz'|
+|'evac'|
+|'evacdiff'|
+|'workfunction'|
+|'gap_dir_hse'|
+|'gap_dir_hse_nosoc'|
+|'gap_hse'|
+|'gap_hse_nosoc'|
+|'cbm_hse'|
+|'cbm_hse_nosoc'|
+|'vbm_hse'|
+|'vbm_hse_nosoc'|
+|'efermi_hse_nosoc'|
+|'efermi_hse_soc'|
+|'emass_cb_dir1'|
+|'emass_cb_dir2'|
+|'emass_cb_dir3'|
+|'emass_vb_dir1'|
+|'emass_vb_dir2'|
+|'emass_vb_dir3'|
+|'is_magnetic'|
+|'bader_charges'|
+|'magmoms'|
 
 ## ToDo: 
 - [x] compress raw data JSON file for LT storage. 
